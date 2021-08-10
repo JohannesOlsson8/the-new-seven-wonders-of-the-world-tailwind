@@ -57,9 +57,9 @@ export const Menu: React.FC = () => {
 
       {desktop && (
         <nav className="rounded bg-white shadow-md mb-6 lg:mx-20 xl:mx-44">
-          <ol className="justify-between flex flex-row">
+          <ul className="justify-between flex flex-row">
             <MenuItems />
-          </ol>
+          </ul>
         </nav>
       )}
       {open && !desktop && (
