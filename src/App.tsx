@@ -12,7 +12,7 @@ import { Petra } from "./features/petra/Petra";
 import { MachuPicchu } from "./features/machu-picchu/MachuPicchu";
 import { GreatWallOfChina } from "./features/great-wall-of-china/GreatWallOfChina";
 import { Colosseum } from "./features/colosseum/Colosseum";
-import { BackgroundProvider } from "./utils/AppState";
+import { BackgroundProvider } from "./utils/BackgroundContext";
 
 function App() {
   return (

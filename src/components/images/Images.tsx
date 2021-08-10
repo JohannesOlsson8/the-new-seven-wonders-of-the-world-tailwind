@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { Background } from "../../utils/AppState";
+import { Background } from "../../utils/BackgroundContext";
 import { ReactComponent as ActiveImageIcon } from "../../icons/check.svg";
 
 export interface IImages {
