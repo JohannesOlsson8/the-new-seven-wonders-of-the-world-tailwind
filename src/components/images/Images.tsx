@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { AppContext } from "../../utils/AppState";
+import { Background } from "../../utils/AppState";
 import { ReactComponent as ActiveImageIcon } from "../../icons/check.svg";
 
 export interface IImages {
@@ -13,7 +13,7 @@ export interface IImage {
 }
 
 export const Images = (props: IImages) => {
-  const context = useContext(AppContext);
+  const context = useContext(Background);
   const { returnValue, setActiveImage } = context;
 
   useEffect(() => {

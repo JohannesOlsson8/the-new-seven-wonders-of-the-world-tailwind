@@ -5,7 +5,6 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-
 import { ChichenItza } from "./features/chichen-itza/ChichenItza";
 import { ChristTheRedeemer } from "./features/christ-the-redeemer/ChristTheRedeemer";
 import { TajMahal } from "./features/taj-mahal/TajMahal";
@@ -13,11 +12,11 @@ import { Petra } from "./features/petra/Petra";
 import { MachuPicchu } from "./features/machu-picchu/MachuPicchu";
 import { GreatWallOfChina } from "./features/great-wall-of-china/GreatWallOfChina";
 import { Colosseum } from "./features/colosseum/Colosseum";
-import { AppProvider } from "./utils/AppState";
+import { BackgroundProvider } from "./utils/AppState";
 
 function App() {
   return (
-    <AppProvider>
+    <BackgroundProvider>
       <Router>
         <main className="flex flex-col flex-1">
           <Switch>
@@ -47,7 +46,7 @@ function App() {
         </main>
         <Menu />
       </Router>
-    </AppProvider>
+    </BackgroundProvider>
   );
 }
 

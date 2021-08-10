@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { ReactComponent as OpenMenuIcon } from "../../icons/menu.svg";
 import { ReactComponent as CloseMenuIcon } from "../../icons/close.svg";
 import { useMediaQuery } from "@react-hook/media-query";
@@ -20,12 +20,14 @@ export const Menu: React.FC = () => {
   const MenuItems = () => (
     <>
       {MenuItemsData.map((x: IMenuItem) => (
-        <MenuItem
-          label={x.label}
-          icon={x.icon}
-          onClick={() => setOpen(false)}
-          link={x.link}
-        />
+        <React.Fragment key={x.label}>
+          <MenuItem
+            label={x.label}
+            icon={x.icon}
+            onClick={() => setOpen(false)}
+            link={x.link}
+          />
+        </React.Fragment>
       ))}
     </>
   );
