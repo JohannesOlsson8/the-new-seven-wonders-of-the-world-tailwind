@@ -5,7 +5,7 @@ interface IInformationItem {
 }
 
 export const InformationItem = (props: IInformationItem) => (
-  <li className="flex items-center text-black md:ml-9  lg:text-white">
+  <li className="flex items-center text-black md:ml-9 lg:text-white">
     <div className="mr-3 fill-current transform scale-110 hidden sm:block">
       {props.icon}
     </div>
