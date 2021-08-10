@@ -2,7 +2,7 @@ import React, { createContext, useReducer } from "react";
 import { Container } from "../components/container/Container";
 
 export const initialValues = {
-  returnValue: "true",
+  returnValue: "",
   setActiveImage: (img: string) => {},
 };
 

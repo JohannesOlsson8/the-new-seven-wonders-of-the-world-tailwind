@@ -16,8 +16,12 @@ export const Images = (props: IImages) => {
   const context = useContext(Background);
   const { returnValue, setActiveImage } = context;
 
+  const firstImage = props.images[0].srcFull;
+
   useEffect(() => {
-    setActiveImage(props.images[0].srcFull);
+    setActiveImage(firstImage);
+    // No need to ever run this useEffect more after render
+    // eslint-disable-next-line
   }, []);
 
   return (
