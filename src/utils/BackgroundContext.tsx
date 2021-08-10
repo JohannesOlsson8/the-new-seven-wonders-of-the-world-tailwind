@@ -12,12 +12,12 @@ type State = {
   returnValue: string;
 };
 
-type Action = {
-  type: string;
+type IImage = {
+  image: string;
 };
 
-function reducer(state: State, action: Action) {
-  return { returnValue: action.type };
+function reducer(state: State, action: IImage) {
+  return { returnValue: action.image };
 }
 
 export const BackgroundProvider: React.FC = ({ children }) => {
@@ -27,7 +27,7 @@ export const BackgroundProvider: React.FC = ({ children }) => {
     <Background.Provider
       value={{
         returnValue: state.returnValue,
-        setActiveImage: (img: string) => dispatch({ type: img }),
+        setActiveImage: (img: string) => dispatch({ image: img }),
       }}
     >
       <div
