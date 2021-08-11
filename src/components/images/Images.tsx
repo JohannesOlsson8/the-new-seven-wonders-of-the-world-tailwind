@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { Background } from "../../utils/BackgroundContext";
 import { ReactComponent as ActiveImageIcon } from "../../icons/check.svg";
 import { motion } from "framer-motion";
+import { useMediaQuery } from "@react-hook/media-query";
 
 export interface IImages {
   images: IImage[];
@@ -10,6 +11,7 @@ export interface IImages {
 export interface IImage {
   srcPrev: string;
   srcFull: string;
+  srcMobile: string;
   alt: string;
 }
 
@@ -35,9 +37,13 @@ const item = {
 export const Images = (props: IImages) => {
   const context = useContext(Background);
   const { returnValue, setActiveImage } = context;
+  const desktop = useMediaQuery("only screen and (min-width: 550px)");
 
   useEffect(() => {
-    setActiveImage(props.images[0].srcFull, props.images[0].alt);
+    setActiveImage(
+      desktop ? props.images[0].srcFull : props.images[0].srcMobile,
+      props.images[0].alt
+    );
     // No need to ever run this useEffect more after render
     // eslint-disable-next-line
   }, []);
@@ -54,13 +60,17 @@ export const Images = (props: IImages) => {
           <motion.button
             variants={item}
             aria-label={`Click to enlarge this image of ${x.alt}`}
-            aria-pressed={returnValue === x.srcFull}
+            aria-pressed={
+              desktop ? returnValue === x.srcFull : returnValue === x.srcMobile
+            }
             key={x.alt}
             style={{
               backgroundImage: `url(${x.srcPrev})`,
               backgroundSize: "cover",
             }}
-            onClick={() => setActiveImage(x.srcFull, x.alt)}
+            onClick={() =>
+              setActiveImage(desktop ? x.srcFull : x.srcMobile, x.alt)
+            }
             className={`flex h-24 w-1/4 mt-4 border-2 rounded shadow-md sm:w-32 md:mr-2 lg:mr-0 lg:mx-0 lg:ml-2 focus:border-indigo-400 focus:outline-none ${
               returnValue === x.srcFull ? "border-indigo-300" : ""
             }`}
