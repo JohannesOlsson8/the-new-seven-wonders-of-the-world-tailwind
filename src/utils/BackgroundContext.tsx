@@ -35,17 +35,12 @@ export const BackgroundProvider: React.FC = ({ children }) => {
       }}
     >
       <div className="h-screen relative">
-        <div className="absolute z-10 flex justify-center overflow-hidden left-0 right-0">
-          <img
-            src={state.returnValue}
-            alt={state.alt}
-            className="h-screen max-w-none object-cover w-auto"
-            style={{
-              maxWidth: "100vw",
-              maxHeight: "100vh",
-            }}
-          />
-        </div>
+        <div
+          style={{
+            backgroundImage: `url('${state.returnValue}')`,
+          }}
+          className="absolute z-10 h-screen w-full bg-center bg-cover"
+        />
         <Container>{children}</Container>
       </div>
     </Background.Provider>
