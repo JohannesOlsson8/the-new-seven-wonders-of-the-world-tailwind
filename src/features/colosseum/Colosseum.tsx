@@ -15,19 +15,19 @@ export const Colosseum = () => {
     {
       srcFull: imgFull1,
       srcPrev: imgPrev1,
-      srcMobile: imgFull1,
+      srcMobile: imgMobile1,
       alt: "Colosseum from outside",
     },
     {
       srcFull: imgFull2,
       srcPrev: imgPrev2,
-      srcMobile: imgFull1,
+      srcMobile: imgMobile2,
       alt: "Close up Colosseum from outside",
     },
     {
       srcFull: imgFull3,
       srcPrev: imgPrev3,
-      srcMobile: imgFull1,
+      srcMobile: imgMobile3,
       alt: "Colosseum inside",
     },
   ];
